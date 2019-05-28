@@ -7,6 +7,6 @@ public class HomePage extends Main {
 	String buttonRegister =  "startUserRegistrationCD";
 	
 	public void clickButtonRegister() {
-		getButton().clickByContentdesc(buttonRegister);
+		getClick().clickByContentdesc(buttonRegister);
 	}
 }

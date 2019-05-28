@@ -2,16 +2,11 @@ package com.test.eventConnector;
 
 public class Main {
 	
-	private OnClick button = new OnClick();
+	private OnClick click = new OnClick();
 	private OnSetText setText = new OnSetText();
-	
-	public OnClick getButton() {
-		return button;
-	}
-
-	public void setButton(OnClick button) {
-		this.button = button;
-	}
+	private OnSelectList selectList = new OnSelectList();
+	private OnSwipe swipe = new OnSwipe();
+	private OnVerify verify = new OnVerify();
 
 	public OnSetText getSetText() {
 		return setText;
@@ -19,6 +14,38 @@ public class Main {
 
 	public void setSetText(OnSetText setText) {
 		this.setText = setText;
+	}
+
+	public OnVerify getVerify() {
+		return verify;
+	}
+
+	public void setVerify(OnVerify verify) {
+		this.verify = verify;
+	}
+
+	public OnSwipe getSwipe() {
+		return swipe;
+	}
+
+	public void setSwipe(OnSwipe swipe) {
+		this.swipe = swipe;
+	}
+
+	public OnSelectList getSelectList() {
+		return selectList;
+	}
+
+	public void setSelectList(OnSelectList selectList) {
+		this.selectList = selectList;
+	}
+
+	public OnClick getClick() {
+		return click;
+	}
+
+	public void setClick(OnClick click) {
+		this.click = click;
 	}
 
 }

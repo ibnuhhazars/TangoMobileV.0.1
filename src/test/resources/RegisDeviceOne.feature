@@ -6,3 +6,4 @@ Feature: RegistrationOne
   Scenario: Registration user with java programming language
   	When i click button register
   	And i fill registration requirement
+  	Then i verify registration user language is "Java"

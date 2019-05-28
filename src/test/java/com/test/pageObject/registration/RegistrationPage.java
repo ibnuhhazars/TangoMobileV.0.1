@@ -11,6 +11,7 @@ public class RegistrationPage extends Main {
 	String dropDownInput_preferedProgrammingLanguage = "input_preferedProgrammingLanguage";
 	String checkBoxInput_adds = "input_adds";
 	String btnRegisterUser = "btnRegisterUser";
+	String label_preferedProgrammingLanguage_data = "label_preferedProgrammingLanguage_data";
 	
 	// TODO: Test Data
 	String dataUserName = "Ibnuh";
@@ -18,9 +19,16 @@ public class RegistrationPage extends Main {
 	String dataPassword = "P@ssw0rd";
 	String dataInputProgrammingLanguage = "Java";
 			
-	public void fillRegistrationForm() {
+	public void fillRegistrationForm() throws InterruptedException {
 		getSetText().setTextById(dataUserName, txtInputUsername);
 		getSetText().setTextById(dataEmail, txtInputEmail);
 		getSetText().setTextById(dataPassword, txtInputPassword);
+		getSelectList().selectListById(dataInputProgrammingLanguage, dropDownInput_preferedProgrammingLanguage);
+		getClick().clickById(checkBoxInput_adds);
+		getClick().clickById(btnRegisterUser);
+	}
+	
+	public void verifyRegistrationUserLanguage(String text) {
+		getVerify().verifyById(text, label_preferedProgrammingLanguage_data);
 	}
 }
