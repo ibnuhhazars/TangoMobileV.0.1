@@ -7,7 +7,8 @@ public class Main {
 	private OnSelectList selectList = new OnSelectList();
 	private OnSwipe swipe = new OnSwipe();
 	private OnVerify verify = new OnVerify();
-
+	private OnEnter enter = new OnEnter();
+	
 	public OnSetText getSetText() {
 		return setText;
 	}
@@ -46,6 +47,14 @@ public class Main {
 
 	public void setClick(OnClick click) {
 		this.click = click;
+	}
+
+	public OnEnter getEnter() {
+		return enter;
+	}
+
+	public void setEnter(OnEnter enter) {
+		this.enter = enter;
 	}
 
 }
