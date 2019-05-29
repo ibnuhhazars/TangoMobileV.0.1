@@ -34,6 +34,50 @@ public class OnVerify {
 		String getText = getDriverOnVerify().findElement(By.id(objectName)).getText();
 		AssertJUnit.assertEquals(text, getText);
 	}
+	
+	public void verifyByXpath(String text, String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(objectName)));
+		String getText = getDriverOnVerify().findElement(By.xpath(objectName)).getText();
+		AssertJUnit.assertEquals(text, getText);
+	}
+
+	public void verifyElementExistByContentDesc(String text, String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id(objectName)));
+		boolean content = getDriverOnVerify()
+				.findElementByAndroidUIAutomator("UiSelector().description(\"" + objectName + "\")").isDisplayed();
+		AssertJUnit.assertEquals(objectName, content);
+	}
+
+	public void verifyElementExistById(String text, String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id(objectName)));
+		boolean id = getDriverOnVerify().findElement(By.id(objectName)).isDisplayed();
+		AssertJUnit.assertEquals(objectName, id);
+	}
+	
+	public void verifyElementExistByXpath(String text, String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(objectName)));
+		boolean id = getDriverOnVerify().findElement(By.xpath(objectName)).isDisplayed();
+		AssertJUnit.assertEquals(objectName, id);
+	}
+	
+	public void verifyElementDisableByContentDesc(String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id(objectName)));
+		boolean content = getDriverOnVerify()
+				.findElementByAndroidUIAutomator("UiSelector().description(\"" + objectName + "\")").isEnabled();
+		AssertJUnit.assertEquals(false, content);
+	}
+	
+	public void verifyElementDisableById(String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id(objectName)));
+		boolean content = getDriverOnVerify().findElement(By.id(objectName)).isEnabled();
+		AssertJUnit.assertEquals(false, content);
+	}
+	
+	public void verifyElementDisableByXpath(String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(objectName)));
+		boolean content = getDriverOnVerify().findElement(By.xpath(objectName)).isEnabled();
+		AssertJUnit.assertEquals(false, content);
+	}
 
 	public AndroidDriver<WebElement> getDriverOnVerify() {
 		return driverOnVerify;

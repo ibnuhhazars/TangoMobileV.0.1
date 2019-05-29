@@ -31,6 +31,11 @@ public class OnSetText {
 		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id(objectName)));
 		getDriverOnSetText().findElement(By.id(objectName)).sendKeys(text);
 	}
+	
+	public void setTextByXpath(String text, String objectName) {
+		getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(objectName)));
+		getDriverOnSetText().findElement(By.xpath(objectName)).sendKeys(text);
+	}
 
 	public AndroidDriver<WebElement> getDriverOnSetText() {
 		return driverOnSetText;

@@ -37,6 +37,14 @@ public class OnSelectList {
 		getDriverOnSelectList().findElementByAndroidUIAutomator("UiSelector().text(\"" + text + "\")").click();
 	}
 
+	public void selectListByXpath(String text, String objectName) throws InterruptedException {
+		getWait().until(ExpectedConditions.elementToBeClickable(By.id(objectName)));
+		
+		getDriverOnSelectList().findElement(By.xpath(objectName)).click();
+		Thread.sleep(1000);
+		getDriverOnSelectList().findElementByAndroidUIAutomator("UiSelector().text(\"" + text + "\")").click();
+	}
+
 	public WebDriverWait getWait() {
 		return wait;
 	}

@@ -29,6 +29,11 @@ public class OnClick {
 		getWait().until(ExpectedConditions.elementToBeClickable(By.id(objectName)));
 		getDriversOnClick().findElement(By.id(objectName)).click();
 	}
+	
+	public void clickByXpath(String objectName) {
+		getWait().until(ExpectedConditions.elementToBeClickable(By.xpath(objectName)));
+		getDriversOnClick().findElement(By.xpath(objectName)).click();
+	}
 
 	public WebDriverWait getWait() {
 		return wait;
